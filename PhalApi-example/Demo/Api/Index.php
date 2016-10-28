@@ -24,6 +24,6 @@ class Api_Index extends PhalApi_Api {
      * @return int time 当前时间戳
      */
     public function index() {
-        return DI()->gearman->task('default.index',['send'=>'Hello World!']);
+        return DI()->gearman->task('default.index',$_REQUEST);
     }
 }

@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/PhalApi-Gearman.iml
+.idea/copyright/
+.idea/modules.xml
+.idea/workspace.xml
+PhalApi-example/Runtime/log/
+PhalApi-example/vendor/symfony/finder/Tests/Fixtures/A/
+PhalApi-example/vendor/symfony/finder/Tests/Fixtures/r+e.gex[c]a(r)s/
+PhalApi-example/vendor/symfony/translation/Tests/fixtures/resourcebundle/corrupted/

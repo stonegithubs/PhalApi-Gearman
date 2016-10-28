@@ -62,16 +62,18 @@
   
 ## 测试实例
   * 部署PhalApi-example并运行gearman,(参考#正式使用前的准备)
-  * 打开一个终端窗口，观察gearman输出文件，
+  * 打开一个终端窗口(A)，观察gearman输出文件，
 
   ``` shell
     tail -f Library/Gearman/nohup.out
   ```
 
-  * 另外再打开一个终端窗口，查看worker状态
+  * 另外再打开一个终端窗口(B)，查看worker状态
   
   ``` shell
   watch -n 1 "(echo status; sleep 0.1) | nc 127.0.0.1 4730"
   ```
   
   * 访问Index.index接口
+
+  * 然后观察，最开始在B终端会看到有job正在执行，然后在A终端中会出现gearman的输出结果

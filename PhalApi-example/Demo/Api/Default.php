@@ -9,9 +9,7 @@ class Api_Default extends PhalApi_Api {
 
 	public function getRules() {
         return array(
-            'index' => array(
-                'username' 	=> array('name' => 'username', 'default' => 'PHPer', ),
-            ),
+
         );
 	}
 	
@@ -23,8 +21,6 @@ class Api_Default extends PhalApi_Api {
 	 * @return int time 当前时间戳
 	 */
 	public function index() {
-        $test = DI()->notorm->test->getAll();
-        $result = $test->where('name <> ?',3)->fetchAll();
-        return $result;
+		return DI()->request->getAll();
 	}
 }

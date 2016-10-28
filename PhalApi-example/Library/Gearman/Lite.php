@@ -31,7 +31,7 @@ class Gearman_Lite{
         return $service;
     }
 
-    public function task($service , $data =array(),$job='timer' ){
+    public function task($service , $data =array(),$job='job' ){
         return $this->runClient($service , $data ,$job);
     }
 }

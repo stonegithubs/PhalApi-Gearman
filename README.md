@@ -49,7 +49,7 @@
   ```
 
   * 运行Gearman/run.sh
-  > sh run.sh #运行后会在Library/Gearman/目录下生成一个nohup.out文件，也就是gearman运行时的输出文件
+  > sh run.sh 1     #运行后会在Library/Gearman/目录下生成一个nohup.out文件，也就是gearman运行时的输出文件。最后的参数 1 为生成1个worker
 
 ## 基于PhalApi的使用
   * 入口注册gearman服务
@@ -60,4 +60,14 @@
 
   * 接收gearman异步请求中的参数时，可以使用phalapi的 DI()->request->getAll();方法
   
-## 实例
+## 测试实例
+  * 部署PhalApi-example并运行gearman,(参考#正式使用前的准备)
+  * 打开一个终端窗口，观察gearman输出文件，tail -f nohup.out
+  * 另外再打开一个终端窗口
+  
+  ``` shell
+  watch -n 1 "(echo status; sleep 0.1) | nc 127.0.0.1 4730"
+  #查看worker状态
+  ```
+  
+  * 访问Index.index接口

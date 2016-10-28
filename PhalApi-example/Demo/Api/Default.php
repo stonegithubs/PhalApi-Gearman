@@ -21,6 +21,9 @@ class Api_Default extends PhalApi_Api {
 	 * @return int time 当前时间戳
 	 */
 	public function index() {
-		return DI()->request->getAll();
+		$data = DI()->request->getAll();
+		$data['hello'] = "world";
+		$data['timestamp'] = time();
+		return $data;
 	}
 }

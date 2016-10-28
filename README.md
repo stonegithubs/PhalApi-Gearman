@@ -62,12 +62,16 @@
   
 ## 测试实例
   * 部署PhalApi-example并运行gearman,(参考#正式使用前的准备)
-  * 打开一个终端窗口，观察gearman输出文件，tail -f nohup.out
-  * 另外再打开一个终端窗口
+  * 打开一个终端窗口，观察gearman输出文件，
+
+  ``` shell
+    tail -f Library/Gearman/nohup.out
+  ```
+
+  * 另外再打开一个终端窗口，查看worker状态
   
   ``` shell
   watch -n 1 "(echo status; sleep 0.1) | nc 127.0.0.1 4730"
-  #查看worker状态
   ```
   
   * 访问Index.index接口
